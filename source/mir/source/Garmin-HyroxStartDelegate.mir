@@ -1,0 +1,64 @@
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 5; @symbol_classdef = [Garmin_HyroxStartDelegate,5,6,31]; @symbol_extends<0> = [WatchUi,5,40,47]; @symbol_extends<1> = [BehaviorDelegate,5,48,64]; ]
+class Garmin_HyroxStartDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; ]
+    function initialize() as Void {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_7_26_9_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc" 8 8 ]
+        symbol [ BehaviorDelegate %tmp.2 8 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 8 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_7_26_9_4_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 11; @symbol_functiondef = [onKey,11,13,18]; @symbol_param<0> = [keyEvent,11,19,27]; @symbol_param<0>_type<0> = [KeyEvent,11,31,39]; @symbol_return<0> = [Boolean,11,44,51]; ]
+    function onKey(keyEvent as KeyEvent) as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_11_52_23_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc" 13 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_11_52_23_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_11_52_23_0_stop" ]
+        %hyroxMenu.1 = local;
+        symbol [ hyroxMenu %hyroxMenu.1 13 8 17 ];
+        symbol [ Garmin_HyroxMenuView %tmp.4 13 24 44 ];
+        %tmp.4 = getv ? :Garmin_HyroxMenuView;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %hyroxMenu.1 %tmp.1;
+        symbol [ hyroxMenu %hyroxMenu.1 13 8 17 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc" 16 0 ]
+        symbol [ WatchUi %tmp.5 16 0 7 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.6 16 8 16 ];
+        %tmp.6 = getv function %tmp.5 :pushView;
+        %tmp.7 = lgetv %hyroxMenu.1;
+        symbol [ hyroxMenu %tmp.7 17 4 13 ];
+        symbol [ Garmin_HyroxMenuDelegate %tmp.11 18 8 32 ];
+        %tmp.11 = getv ? :Garmin_HyroxMenuDelegate;
+        %tmp.12 = lgetv %hyroxMenu.1;
+        symbol [ hyroxMenu %tmp.12 18 33 42 ];
+        %tmp.8 = newc %tmp.11 (%tmp.12);
+        symbol [ WatchUi %tmp.13 19 4 11 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.14 19 12 20 ];
+        %tmp.14 = getv %tmp.13 :SLIDE_UP;
+        invoke %tmp.5 %tmp.6(%tmp.7, %tmp.8, %tmp.14);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc" 22 4 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxStartDelegate_mc_11_52_23_0_stop:
+    }
+}
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxStartDelegate.mc"; @line = 1; ]
+<init> {
+}

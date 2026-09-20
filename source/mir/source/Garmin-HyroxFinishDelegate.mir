@@ -1,0 +1,41 @@
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 5; @symbol_classdef = [Garmin_HyroxFinishDelegate,5,6,32]; @symbol_extends<0> = [WatchUi,5,41,48]; @symbol_extends<1> = [BehaviorDelegate,5,49,65]; ]
+class Garmin_HyroxFinishDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; @symbol_param<0> = [view,7,24,28]; ]
+    function initialize(view) as Void {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxFinishDelegate_mc_7_30_9_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc" 8 8 ]
+        symbol [ BehaviorDelegate %tmp.2 8 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 8 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxFinishDelegate_mc_7_30_9_4_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 11; @symbol_functiondef = [onKey,11,13,18]; @symbol_param<0> = [keyEvent,11,19,27]; @symbol_param<0>_type<0> = [KeyEvent,11,31,39]; @symbol_return<0> = [Boolean,11,44,51]; ]
+    function onKey(keyEvent as KeyEvent) as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxFinishDelegate_mc_11_52_14_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc" 12 8 ]
+        symbol [ System %tmp.1 12 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ exit %tmp.2 12 15 19 ];
+        %tmp.2 = getv function %tmp.1 :exit;
+        invoke %tmp.1 %tmp.2();
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxFinishDelegate_mc_11_52_14_4_stop:
+    }
+}
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxFinishDelegate.mc"; @line = 1; ]
+<init> {
+}

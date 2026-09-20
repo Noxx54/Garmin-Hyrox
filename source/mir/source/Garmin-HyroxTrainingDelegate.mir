@@ -1,0 +1,196 @@
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [WatchUi,1,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [Lang,2,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Attention,3,14,23]; ]
+import Toybox.Attention;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 5; @position = 4; @symbol_vardef = [trainingView,5,4,16]; ]
+var trainingView;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 8; @symbol_classdef = [Garmin_HyroxTrainingDelegate,8,6,34]; @symbol_extends<0> = [WatchUi,8,43,50]; @symbol_extends<1> = [BehaviorDelegate,8,51,67]; ]
+class Garmin_HyroxTrainingDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 8; ]
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 8; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 12; @symbol_functiondef = [initialize,12,9,19]; @symbol_param<0> = [view,12,20,24]; ]
+    function initialize(view) as Void {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_12_26_15_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 13 4 ]
+        symbol [ BehaviorDelegate %tmp.2 13 4 20 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 13 21 31 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 14 4 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 14 19 23 ];
+        symbol [ trainingView ? 14 4 16 ];
+        putv self :trainingView %tmp.4;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_12_26_15_0_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 17; @symbol_functiondef = [onKey,17,9,14]; @symbol_param<0> = [keyEvent,17,15,23]; @symbol_param<0>_type<0> = [KeyEvent,17,27,35]; @symbol_return<0> = [Boolean,17,40,47]; ]
+    function onKey(keyEvent as KeyEvent) as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_17_48_47_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 18 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_stmt:
+        symbol [ trainingView %tmp.2 18 8 20 ];
+        %tmp.2 = getv ? :trainingView;
+        symbol [ currentStation %tmp.3 18 21 35 ];
+        %tmp.3 = getv %tmp.2 :currentStation;
+        symbol [ trainingView %tmp.5 18 38 50 ];
+        %tmp.5 = getv ? :trainingView;
+        symbol [ workoutStations %tmp.6 18 51 66 ];
+        %tmp.6 = getv %tmp.5 :workoutStations;
+        symbol [ size %tmp.7 18 67 71 ];
+        %tmp.7 = getv function %tmp.6 :size;
+        %tmp.8 = invoke %tmp.6 %tmp.7();
+        %tmp.9 = 1;
+        %tmp.10 = sub %tmp.8 %tmp.9;
+        %tmp.11 = lt %tmp.3 %tmp.10;
+        bf %tmp.11 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_else_false;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_79_26_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 19 4 ]
+        symbol [ trainingView %tmp.12 19 4 16 ];
+        %tmp.12 = getv self :trainingView;
+        symbol [ trainingView %tmp.15 19 4 16 ];
+        %tmp.15 = getv ? :trainingView;
+        symbol [ currentStation %tmp.16 19 17 31 ];
+        %tmp.16 = getv %tmp.15 :currentStation;
+        %tmp.17 = add %tmp.16 1;
+        symbol [ currentStation ? 19 17 31 ];
+        putv %tmp.12 :currentStation dup %tmp.17;
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 20 4 ]
+        symbol [ trainingView %tmp.18 20 4 16 ];
+        %tmp.18 = getv self :trainingView;
+        %tmp.19 = 0;
+        symbol [ stationSeconds ? 20 17 31 ];
+        putv %tmp.18 :stationSeconds %tmp.19;
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 21 4 ]
+        symbol [ trainingView %tmp.21 21 4 16 ];
+        %tmp.21 = getv ? :trainingView;
+        symbol [ lapModeField %tmp.22 21 17 29 ];
+        %tmp.22 = getv %tmp.21 :lapModeField;
+        symbol [ setData %tmp.23 21 30 37 ];
+        %tmp.23 = getv function %tmp.22 :setData;
+        %tmp.24 = 2;
+        invoke %tmp.22 %tmp.23(%tmp.24);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 22 4 ]
+        symbol [ trainingView %tmp.26 22 4 16 ];
+        %tmp.26 = getv ? :trainingView;
+        symbol [ activitySession %tmp.27 22 17 32 ];
+        %tmp.27 = getv %tmp.26 :activitySession;
+        symbol [ addLap %tmp.28 22 33 39 ];
+        %tmp.28 = getv function %tmp.27 :addLap;
+        invoke %tmp.27 %tmp.28();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 23 4 ]
+        symbol [ Attention %tmp.29 23 4 13 ];
+        %tmp.29 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.30 23 14 21 ];
+        %tmp.30 = getv function %tmp.29 :vibrate;
+        %tmp.31 = newa 1;
+        symbol [ Attention %tmp.34 24 8 17 ];
+        %tmp.34 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.35 24 18 29 ];
+        %tmp.35 = getv function ? %tmp.34 :VibeProfile;
+        %tmp.36 = 100;
+        %tmp.37 = 300;
+        %tmp.32 = newc %tmp.35 (%tmp.36, %tmp.37);
+        %tmp.38 = dup %tmp.31;
+        %tmp.39 = aputv %tmp.38 0 %tmp.32;
+        invoke %tmp.29 %tmp.30(%tmp.39);
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_79_26_0_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_else_false:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_27_5_43_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 28 4 ]
+        symbol [ Attention %tmp.40 28 4 13 ];
+        %tmp.40 = getm $.Toybox.Attention;
+        symbol [ vibrate %tmp.41 28 14 21 ];
+        %tmp.41 = getv function %tmp.40 :vibrate;
+        %tmp.42 = newa 1;
+        symbol [ Attention %tmp.45 29 8 17 ];
+        %tmp.45 = getm $.Toybox.Attention;
+        symbol [ VibeProfile %tmp.46 29 18 29 ];
+        %tmp.46 = getv function ? %tmp.45 :VibeProfile;
+        %tmp.47 = 100;
+        %tmp.48 = 300;
+        %tmp.43 = newc %tmp.46 (%tmp.47, %tmp.48);
+        %tmp.49 = dup %tmp.42;
+        %tmp.50 = aputv %tmp.49 0 %tmp.43;
+        invoke %tmp.40 %tmp.41(%tmp.50);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 31 4 ]
+        symbol [ trainingView %tmp.52 31 4 16 ];
+        %tmp.52 = getv ? :trainingView;
+        symbol [ activitySession %tmp.53 31 17 32 ];
+        %tmp.53 = getv %tmp.52 :activitySession;
+        symbol [ addLap %tmp.54 31 33 39 ];
+        %tmp.54 = getv function %tmp.53 :addLap;
+        invoke %tmp.53 %tmp.54();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 32 4 ]
+        symbol [ trainingView %tmp.56 32 4 16 ];
+        %tmp.56 = getv ? :trainingView;
+        symbol [ workouttimer %tmp.57 32 17 29 ];
+        %tmp.57 = getv %tmp.56 :workouttimer;
+        symbol [ stop %tmp.58 32 30 34 ];
+        %tmp.58 = getv function %tmp.57 :stop;
+        invoke %tmp.57 %tmp.58();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 33 4 ]
+        symbol [ trainingView %tmp.60 33 4 16 ];
+        %tmp.60 = getv ? :trainingView;
+        symbol [ activitySession %tmp.61 33 17 32 ];
+        %tmp.61 = getv %tmp.60 :activitySession;
+        symbol [ stop %tmp.62 33 33 37 ];
+        %tmp.62 = getv function %tmp.61 :stop;
+        invoke %tmp.61 %tmp.62();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 34 4 ]
+        symbol [ trainingView %tmp.64 34 4 16 ];
+        %tmp.64 = getv ? :trainingView;
+        symbol [ activitySession %tmp.65 34 17 32 ];
+        %tmp.65 = getv %tmp.64 :activitySession;
+        symbol [ save %tmp.66 34 33 37 ];
+        %tmp.66 = getv function %tmp.65 :save;
+        invoke %tmp.65 %tmp.66();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 35 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_27_5_43_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_27_5_43_0_stop" ]
+        %finishView.1 = local;
+        symbol [ finishView %finishView.1 35 8 18 ];
+        symbol [ Garmin_HyroxFinishView %tmp.70 35 25 47 ];
+        %tmp.70 = getv ? :Garmin_HyroxFinishView;
+        %tmp.67 = newc %tmp.70 ();
+        lputv %finishView.1 %tmp.67;
+        symbol [ finishView %finishView.1 35 8 18 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 37 4 ]
+        symbol [ WatchUi %tmp.71 37 4 11 ];
+        %tmp.71 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.72 37 12 20 ];
+        %tmp.72 = getv function %tmp.71 :pushView;
+        %tmp.73 = lgetv %finishView.1;
+        symbol [ finishView %tmp.73 38 8 18 ];
+        symbol [ Garmin_HyroxFinishDelegate %tmp.77 39 12 38 ];
+        %tmp.77 = getv ? :Garmin_HyroxFinishDelegate;
+        %tmp.78 = lgetv %finishView.1;
+        symbol [ finishView %tmp.78 39 39 49 ];
+        %tmp.74 = newc %tmp.77 (%tmp.78);
+        symbol [ WatchUi %tmp.79 40 8 15 ];
+        %tmp.79 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.80 40 16 24 ];
+        %tmp.80 = getv %tmp.79 :SLIDE_UP;
+        invoke %tmp.71 %tmp.72(%tmp.73, %tmp.74, %tmp.80);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 42 4 ]
+        %tmp.81 = true;
+        ret %tmp.81;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_27_5_43_0_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_18_4_43_0_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc" 45 4 ]
+        %tmp.82 = true;
+        ret %tmp.82;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTrainingDelegate_mc_17_48_47_0_stop:
+    }
+}
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTrainingDelegate.mc"; @line = 1; ]
+<init> {
+}

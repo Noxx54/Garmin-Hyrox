@@ -1,0 +1,14 @@
+# Garmin Connect IQ
+bin/
+build/
+*.prg
+*.iq
+*.debug.xml
+
+# IDE
+.vscode/
+
+# Fichiers temporaires
+*.log
+*.tmp
+*~

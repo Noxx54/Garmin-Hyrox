@@ -1,0 +1,322 @@
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 1; @symbol_importdef<0> = [Toybox,1,7,13]; @symbol_importdef<1> = [Lang,1,14,18]; ]
+import Toybox.Lang;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [System,2,14,20]; ]
+import Toybox.System;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [WatchUi,3,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 5; @symbol_classdef = [Garmin_HyroxMenuDelegate,5,6,30]; @symbol_extends<0> = [WatchUi,5,39,46]; @symbol_extends<1> = [BehaviorDelegate,5,47,63]; ]
+class Garmin_HyroxMenuDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 7; @position = 8; @symbol_vardef = [menuView,7,8,16]; @symbol_type<0> = [Garmin_HyroxMenuView,7,20,40]; ]
+    var menuView as Garmin_HyroxMenuView;
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 8; @position = 8; @symbol_vardef = [enabledStations,8,8,23]; ]
+    var enabledStations;
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 11; @symbol_functiondef = [initialize,11,13,23]; @symbol_param<0> = [view,11,24,28]; ]
+    function initialize(view) as Void {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_11_30_14_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 12 8 ]
+        symbol [ BehaviorDelegate %tmp.2 12 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 12 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 13 8 ]
+        %tmp.4 = lgetv %view;
+        symbol [ view %tmp.4 13 19 23 ];
+        symbol [ menuView ? 13 8 16 ];
+        putv self :menuView %tmp.4;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_11_30_14_4_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 16; @symbol_functiondef = [onTap,16,13,18]; @symbol_param<0> = [clickEvent,16,19,29]; @symbol_param<0>_type<0> = [ClickEvent,16,33,43]; @symbol_return<0> = [Boolean,16,48,55]; ]
+    function onTap(clickEvent as ClickEvent) as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 18 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop" ]
+        %coordinates.1 = local;
+        symbol [ coordinates %coordinates.1 18 8 19 ];
+        %tmp.1 = lgetv %clickEvent;
+        symbol [ clickEvent %tmp.1 18 22 32 ];
+        symbol [ getCoordinates %tmp.2 18 33 47 ];
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %coordinates.1 %tmp.3;
+        symbol [ coordinates %coordinates.1 18 8 19 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 19 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop" ]
+        %station.2 = local;
+        symbol [ station %station.2 19 8 15 ];
+        symbol [ menuView %tmp.5 19 18 26 ];
+        %tmp.5 = getv ? :menuView;
+        symbol [ selectedStation %tmp.6 19 27 42 ];
+        %tmp.6 = getv %tmp.5 :selectedStation;
+        lputv %station.2 %tmp.6;
+        symbol [ station %station.2 19 8 15 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 20 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop" ]
+        %y.3 = local;
+        symbol [ y %y.3 20 8 9 ];
+        %tmp.7 = lgetv %coordinates.1;
+        symbol [ coordinates %tmp.7 20 12 23 ];
+        %tmp.8 = 1;
+        %tmp.9 = agetv %tmp.7 %tmp.8;
+        lputv %y.3 %tmp.9;
+        symbol [ y %y.3 20 8 9 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 21 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop" ]
+        %height.4 = local;
+        symbol [ height %height.4 21 8 14 ];
+        symbol [ menuView %tmp.11 21 17 25 ];
+        %tmp.11 = getv ? :menuView;
+        symbol [ screenHeight %tmp.12 21 26 38 ];
+        %tmp.12 = getv %tmp.11 :screenHeight;
+        lputv %height.4 %tmp.12;
+        symbol [ height %height.4 21 8 14 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 23 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_stmt:
+        %tmp.13 = lgetv %y.3;
+        symbol [ y %tmp.13 23 8 9 ];
+        %tmp.14 = lgetv %height.4;
+        symbol [ height %tmp.14 23 12 18 ];
+        %tmp.15 = 3;
+        %tmp.16 = div %tmp.14 %tmp.15;
+        %tmp.17 = lt %tmp.13 %tmp.16;
+        bf %tmp.17 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_false;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_24_25_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 24 4 ]
+        symbol [ menuView %tmp.19 24 14 22 ];
+        %tmp.19 = getv ? :menuView;
+        symbol [ selectedStation %tmp.20 24 23 38 ];
+        %tmp.20 = getv %tmp.19 :selectedStation;
+        lputv %station.2 %tmp.20;
+        symbol [ station %station.2 24 4 11 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_24_25_0_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_false:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 25 7 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_stmt:
+        %tmp.21 = lgetv %y.3;
+        symbol [ y %tmp.21 25 11 12 ];
+        %tmp.22 = lgetv %height.4;
+        symbol [ height %tmp.22 25 15 21 ];
+        %tmp.23 = 2;
+        %tmp.24 = mul %tmp.22 %tmp.23;
+        %tmp.25 = 3;
+        %tmp.26 = div %tmp.24 %tmp.25;
+        %tmp.27 = lt %tmp.21 %tmp.26;
+        bf %tmp.27 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_else_false;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_31_27_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 26 4 ]
+        symbol [ menuView %tmp.29 26 14 22 ];
+        %tmp.29 = getv ? :menuView;
+        symbol [ selectedStation %tmp.30 26 23 38 ];
+        %tmp.30 = getv %tmp.29 :selectedStation;
+        %tmp.31 = 1;
+        %tmp.32 = add %tmp.30 %tmp.31;
+        lputv %station.2 %tmp.32;
+        symbol [ station %station.2 26 4 11 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_31_27_0_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_else_false:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_27_7_29_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 28 4 ]
+        symbol [ menuView %tmp.34 28 14 22 ];
+        %tmp.34 = getv ? :menuView;
+        symbol [ selectedStation %tmp.35 28 23 38 ];
+        %tmp.35 = getv %tmp.34 :selectedStation;
+        %tmp.36 = 2;
+        %tmp.37 = add %tmp.35 %tmp.36;
+        lputv %station.2 %tmp.37;
+        symbol [ station %station.2 28 4 11 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_27_7_29_0_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_25_7_29_0_if_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_23_4_29_0_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 31 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_stmt:
+        symbol [ menuView %tmp.39 31 8 16 ];
+        %tmp.39 = getv ? :menuView;
+        symbol [ stationEnabled %tmp.40 31 17 31 ];
+        %tmp.40 = getv %tmp.39 :stationEnabled;
+        %tmp.41 = lgetv %station.2;
+        symbol [ station %tmp.41 31 32 39 ];
+        %tmp.42 = agetv %tmp.40 %tmp.41;
+        bf %tmp.42 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_else_false;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_42_33_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 32 8 ]
+        symbol [ menuView %tmp.43 32 8 16 ];
+        %tmp.43 = getv self :menuView;
+        symbol [ stationEnabled %tmp.44 32 17 31 ];
+        %tmp.44 = getv %tmp.43 :stationEnabled;
+        %tmp.45 = false;
+        %tmp.46 = lgetv %station.2;
+        symbol [ station %tmp.46 32 32 39 ];
+        aputv %tmp.44 %tmp.46 %tmp.45;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_42_33_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_else_false:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_33_11_35_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 34 8 ]
+        symbol [ menuView %tmp.47 34 8 16 ];
+        %tmp.47 = getv self :menuView;
+        symbol [ stationEnabled %tmp.48 34 17 31 ];
+        %tmp.48 = getv %tmp.47 :stationEnabled;
+        %tmp.49 = true;
+        %tmp.50 = lgetv %station.2;
+        symbol [ station %tmp.50 34 32 39 ];
+        aputv %tmp.48 %tmp.50 %tmp.49;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_33_11_35_4_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_31_4_35_4_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 37 4 ]
+        symbol [ WatchUi %tmp.51 37 4 11 ];
+        %tmp.51 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.52 37 12 25 ];
+        %tmp.52 = getv function %tmp.51 :requestUpdate;
+        invoke %tmp.51 %tmp.52();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 39 4 ]
+        %tmp.53 = true;
+        ret %tmp.53;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 42; @symbol_functiondef = [onNextPage,42,13,23]; @symbol_return<0> = [Boolean,42,29,36]; ]
+    function onNextPage() as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_42_37_51_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 44 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_4_46_4_if_stmt:
+        symbol [ menuView %tmp.2 44 8 16 ];
+        %tmp.2 = getv ? :menuView;
+        symbol [ selectedStation %tmp.3 44 17 32 ];
+        %tmp.3 = getv %tmp.2 :selectedStation;
+        %tmp.4 = 13;
+        %tmp.5 = lt %tmp.3 %tmp.4;
+        bf %tmp.5 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_4_46_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_4_46_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_39_46_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 45 8 ]
+        symbol [ menuView %tmp.6 45 8 16 ];
+        %tmp.6 = getv self :menuView;
+        symbol [ menuView %tmp.9 45 8 16 ];
+        %tmp.9 = getv ? :menuView;
+        symbol [ selectedStation %tmp.10 45 17 32 ];
+        %tmp.10 = getv %tmp.9 :selectedStation;
+        %tmp.11 = add %tmp.10 1;
+        symbol [ selectedStation ? 45 17 32 ];
+        putv %tmp.6 :selectedStation dup %tmp.11;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_39_46_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_4_46_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_44_4_46_4_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 48 4 ]
+        symbol [ WatchUi %tmp.12 48 4 11 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.13 48 12 25 ];
+        %tmp.13 = getv function %tmp.12 :requestUpdate;
+        invoke %tmp.12 %tmp.13();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 50 4 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_42_37_51_0_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 53; @symbol_functiondef = [onPreviousPage,53,9,23]; @symbol_return<0> = [Boolean,53,29,36]; ]
+    function onPreviousPage() as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_53_37_63_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 55 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_4_57_4_if_stmt:
+        symbol [ menuView %tmp.2 55 8 16 ];
+        %tmp.2 = getv ? :menuView;
+        symbol [ selectedStation %tmp.3 55 17 32 ];
+        %tmp.3 = getv %tmp.2 :selectedStation;
+        %tmp.4 = 0;
+        %tmp.5 = gt %tmp.3 %tmp.4;
+        bf %tmp.5 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_4_57_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_4_57_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_38_57_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 56 8 ]
+        symbol [ menuView %tmp.6 56 8 16 ];
+        %tmp.6 = getv self :menuView;
+        symbol [ menuView %tmp.9 56 8 16 ];
+        %tmp.9 = getv ? :menuView;
+        symbol [ selectedStation %tmp.10 56 17 32 ];
+        %tmp.10 = getv %tmp.9 :selectedStation;
+        %tmp.11 = sub %tmp.10 1;
+        symbol [ selectedStation ? 56 17 32 ];
+        putv %tmp.6 :selectedStation dup %tmp.11;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_38_57_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_4_57_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_55_4_57_4_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 60 4 ]
+        symbol [ WatchUi %tmp.12 60 4 11 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.13 60 12 25 ];
+        %tmp.13 = getv function %tmp.12 :requestUpdate;
+        invoke %tmp.12 %tmp.13();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 62 4 ]
+        %tmp.14 = true;
+        ret %tmp.14;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_53_37_63_0_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 64; @symbol_functiondef = [onKey,64,9,14]; @symbol_param<0> = [keyEvent,64,15,23]; @symbol_param<0>_type<0> = [KeyEvent,64,27,35]; @symbol_return<0> = [Boolean,64,40,47]; ]
+    function onKey(keyEvent as KeyEvent) as Boolean {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_64_48_78_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 66 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_64_48_78_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_64_48_78_0_stop" ]
+        %trainingView.1 = local;
+        symbol [ trainingView %trainingView.1 66 8 20 ];
+        symbol [ Garmin_HyroxTrainingView %tmp.4 66 27 51 ];
+        %tmp.4 = getv ? :Garmin_HyroxTrainingView;
+        %tmp.1 = newc %tmp.4 ();
+        lputv %trainingView.1 %tmp.1;
+        symbol [ trainingView %trainingView.1 66 8 20 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 67 4 ]
+        %tmp.5 = lgetv %trainingView.1;
+        symbol [ trainingView %tmp.5 67 4 16 ];
+        symbol [ menuView %tmp.7 67 35 43 ];
+        %tmp.7 = getv ? :menuView;
+        symbol [ stationEnabled %tmp.8 67 44 58 ];
+        %tmp.8 = getv %tmp.7 :stationEnabled;
+        symbol [ enabledStations ? 67 17 32 ];
+        putv %tmp.5 :enabledStations %tmp.8;
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 68 4 ]
+        %tmp.9 = lgetv %trainingView.1;
+        symbol [ trainingView %tmp.9 68 4 16 ];
+        symbol [ buildWorkoutStations %tmp.10 68 17 37 ];
+        %tmp.10 = getv function %tmp.9 :buildWorkoutStations;
+        invoke %tmp.9 %tmp.10();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 69 4 ]
+        %tmp.11 = lgetv %trainingView.1;
+        symbol [ trainingView %tmp.11 69 4 16 ];
+        symbol [ startActivity %tmp.12 69 17 30 ];
+        %tmp.12 = getv function %tmp.11 :startActivity;
+        invoke %tmp.11 %tmp.12();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 71 4 ]
+        symbol [ WatchUi %tmp.13 71 4 11 ];
+        %tmp.13 = getm $.Toybox.WatchUi;
+        symbol [ pushView %tmp.14 71 12 20 ];
+        %tmp.14 = getv function %tmp.13 :pushView;
+        %tmp.15 = lgetv %trainingView.1;
+        symbol [ trainingView %tmp.15 72 8 20 ];
+        symbol [ Garmin_HyroxTrainingDelegate %tmp.19 73 12 40 ];
+        %tmp.19 = getv ? :Garmin_HyroxTrainingDelegate;
+        %tmp.20 = lgetv %trainingView.1;
+        symbol [ trainingView %tmp.20 73 41 53 ];
+        %tmp.16 = newc %tmp.19 (%tmp.20);
+        symbol [ WatchUi %tmp.21 74 8 15 ];
+        %tmp.21 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_UP %tmp.22 74 16 24 ];
+        %tmp.22 = getv %tmp.21 :SLIDE_UP;
+        invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16, %tmp.22);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc" 77 4 ]
+        %tmp.23 = true;
+        ret %tmp.23;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_64_48_78_0_stop:
+    }
+}
+[ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuDelegate.mc"; @line = 1; ]
+<init> {
+}
