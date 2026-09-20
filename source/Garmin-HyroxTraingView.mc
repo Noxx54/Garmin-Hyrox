@@ -37,7 +37,7 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     "Running",
     "Wall Balls"
 ];
-    var enabledStations;
+    var enabledStations as Array<Boolean> = [];
     var workoutStations as Array<String> = [];
     var heartRate = 0;
     function initialize() {

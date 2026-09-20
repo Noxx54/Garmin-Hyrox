@@ -7,39 +7,22 @@ class Garmin_HyroxStartView extends WatchUi.View {
         View.initialize();
     }
 
+//fonction layout qui mets le fond d'écran
+    function onLayout(dc as Dc) as Void {
+    setLayout(Rez.Layouts.MainLayout(dc));
+}
+//Fin fonction
+
     function onUpdate(dc as Dc) as Void {
 
-        View.onUpdate(dc);
+        dc.clear();         //Nettoyage de l'écran
+        View.onUpdate(dc);  
+        var bitmap = WatchUi.loadResource(Rez.Drawables.fondstart); //Chargement du fond d'écran
+        dc.drawBitmap(0, 0, bitmap);            //Affichage du fond d'écran
 
-        var width = dc.getWidth();
-        var height = dc.getHeight();
+        
 
-        dc.setColor(
-            Graphics.COLOR_BLACK,
-            Graphics.COLOR_BLACK
-        );
-
-        dc.clear();
-
-        dc.setColor(
-            Graphics.COLOR_WHITE,
-            Graphics.COLOR_TRANSPARENT
-        );
-
-        dc.drawText(
-            width / 2,
-            height / 3,
-            Graphics.FONT_LARGE,
-            "HYROX",
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-
-        dc.drawText(
-            width / 2,
-            height / 2,
-            Graphics.FONT_MEDIUM,
-            "START" ,
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
+    
+        
     }
 }

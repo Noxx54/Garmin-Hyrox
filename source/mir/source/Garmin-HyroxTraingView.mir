@@ -69,9 +69,12 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
         %tmp.48 = dup %tmp.46;
         %tmp.49 = aputv %tmp.48 15 %tmp.47;
         putv self :stations %tmp.49;
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 41 8 ]
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 40 8 ]
         %tmp.50 = newa 0;
-        putv self :workoutStations %tmp.50;
+        putv self :enabledStations %tmp.50;
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 41 8 ]
+        %tmp.51 = newa 0;
+        putv self :workoutStations %tmp.51;
     }
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 11; ]
     static
@@ -93,8 +96,8 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     var workouttimer;
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 22; @position = 8; @symbol_vardef = [stations,22,8,16]; @symbol_type<0> = [Array,22,20,25]; @symbol_type<1> = [String,22,26,32]; ]
     var stations as Array<String>;
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 40; @position = 8; @symbol_vardef = [enabledStations,40,8,23]; ]
-    var enabledStations;
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 40; @position = 8; @symbol_vardef = [enabledStations,40,8,23]; @symbol_type<0> = [Array,40,27,32]; @symbol_type<1> = [Boolean,40,33,40]; ]
+    var enabledStations as Array<Boolean>;
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 41; @position = 8; @symbol_vardef = [workoutStations,41,8,23]; @symbol_type<0> = [Array,41,27,32]; @symbol_type<1> = [String,41,33,39]; ]
     var workoutStations as Array<String>;
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 42; @position = 8; @symbol_vardef = [heartRate,42,8,17]; ]
@@ -177,658 +180,668 @@ _home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingV
         invoke %tmp.9 %tmp.10();
 _home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_58_31_64_4_stop:
     }
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 67; @symbol_functiondef = [getStationTime,67,13,27]; @symbol_return<0> = [Lang,67,33,37]; @symbol_return<1> = [String,67,38,44]; ]
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 66; @symbol_functiondef = [onShow,66,13,19]; ]
+    function onShow() as Void {
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_66_30_71_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 68 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_4_70_4_if_stmt:
+        symbol [ workouttimer %tmp.2 68 8 20 ];
+        %tmp.2 = getv ? :workouttimer;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_4_70_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_4_70_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_30_70_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 69 8 ]
+        %tmp.5 = self;
+        symbol [ startWorkoutTimer %tmp.6 69 8 25 ];
+        %tmp.6 = getv function %tmp.5 :startWorkoutTimer;
+        invoke %tmp.5 %tmp.6();
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_30_70_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_4_70_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_68_4_70_4_if_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_66_30_71_0_stop:
+    }
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 76; @symbol_functiondef = [getStationTime,76,13,27]; @symbol_return<0> = [Lang,76,33,37]; @symbol_return<1> = [String,76,38,44]; ]
     function getStationTime() as Lang.String {
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 69 4 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_stop" ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 78 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_stop" ]
         %minutes.1 = local;
-        symbol [ minutes %minutes.1 69 8 15 ];
-        symbol [ stationSeconds %tmp.2 69 18 32 ];
+        symbol [ minutes %minutes.1 78 8 15 ];
+        symbol [ stationSeconds %tmp.2 78 18 32 ];
         %tmp.2 = getv ? :stationSeconds;
         %tmp.3 = 60;
         %tmp.4 = div %tmp.2 %tmp.3;
         lputv %minutes.1 %tmp.4;
-        symbol [ minutes %minutes.1 69 8 15 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 70 4 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_stop" ]
+        symbol [ minutes %minutes.1 78 8 15 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 79 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_stop" ]
         %seconds.2 = local;
-        symbol [ seconds %seconds.2 70 8 15 ];
-        symbol [ stationSeconds %tmp.6 70 18 32 ];
+        symbol [ seconds %seconds.2 79 8 15 ];
+        symbol [ stationSeconds %tmp.6 79 18 32 ];
         %tmp.6 = getv ? :stationSeconds;
         %tmp.7 = 60;
         %tmp.8 = mod %tmp.6 %tmp.7;
         lputv %seconds.2 %tmp.8;
-        symbol [ seconds %seconds.2 70 8 15 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 72 4 ]
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_4_74_4_if_stmt:
+        symbol [ seconds %seconds.2 79 8 15 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 81 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_4_83_4_if_stmt:
         %tmp.9 = lgetv %seconds.2;
-        symbol [ seconds %tmp.9 72 8 15 ];
+        symbol [ seconds %tmp.9 81 8 15 ];
         %tmp.10 = 10;
         %tmp.11 = lt %tmp.9 %tmp.10;
-        bf %tmp.11 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_4_74_4_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_4_74_4_if_true:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_22_74_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 73 8 ]
+        bf %tmp.11 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_4_83_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_4_83_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_22_83_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 82 8 ]
         %tmp.12 = lgetv %minutes.1;
-        symbol [ minutes %tmp.12 73 15 22 ];
+        symbol [ minutes %tmp.12 82 15 22 ];
         %tmp.13 = ":0";
         %tmp.14 = add %tmp.12 %tmp.13;
         %tmp.15 = lgetv %seconds.2;
-        symbol [ seconds %tmp.15 73 32 39 ];
+        symbol [ seconds %tmp.15 82 32 39 ];
         %tmp.16 = add %tmp.14 %tmp.15;
         ret %tmp.16;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_22_74_4_stop:
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_4_74_4_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_72_4_74_4_if_end:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 76 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_22_83_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_4_83_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_81_4_83_4_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 85 4 ]
         %tmp.17 = lgetv %minutes.1;
-        symbol [ minutes %tmp.17 76 11 18 ];
+        symbol [ minutes %tmp.17 85 11 18 ];
         %tmp.18 = ":";
         %tmp.19 = add %tmp.17 %tmp.18;
         %tmp.20 = lgetv %seconds.2;
-        symbol [ seconds %tmp.20 76 27 34 ];
+        symbol [ seconds %tmp.20 85 27 34 ];
         %tmp.21 = add %tmp.19 %tmp.20;
         ret %tmp.21;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_67_45_77_0_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_76_45_86_0_stop:
     }
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 79; @symbol_functiondef = [getTotalTime,79,11,23]; @symbol_return<0> = [Lang,79,29,33]; @symbol_return<1> = [String,79,34,40]; ]
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 88; @symbol_functiondef = [getTotalTime,88,11,23]; @symbol_return<0> = [Lang,88,29,33]; @symbol_return<1> = [String,88,34,40]; ]
     function getTotalTime() as Lang.String {
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 81 4 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_stop" ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 90 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_stop" ]
         %minutes.1 = local;
-        symbol [ minutes %minutes.1 81 8 15 ];
-        symbol [ totalSeconds %tmp.2 81 18 30 ];
+        symbol [ minutes %minutes.1 90 8 15 ];
+        symbol [ totalSeconds %tmp.2 90 18 30 ];
         %tmp.2 = getv ? :totalSeconds;
         %tmp.3 = 60;
         %tmp.4 = div %tmp.2 %tmp.3;
         lputv %minutes.1 %tmp.4;
-        symbol [ minutes %minutes.1 81 8 15 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 82 4 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_stop" ]
+        symbol [ minutes %minutes.1 90 8 15 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 91 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_stop" ]
         %seconds.2 = local;
-        symbol [ seconds %seconds.2 82 8 15 ];
-        symbol [ totalSeconds %tmp.6 82 18 30 ];
+        symbol [ seconds %seconds.2 91 8 15 ];
+        symbol [ totalSeconds %tmp.6 91 18 30 ];
         %tmp.6 = getv ? :totalSeconds;
         %tmp.7 = 60;
         %tmp.8 = mod %tmp.6 %tmp.7;
         lputv %seconds.2 %tmp.8;
-        symbol [ seconds %seconds.2 82 8 15 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 84 4 ]
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_4_86_4_if_stmt:
+        symbol [ seconds %seconds.2 91 8 15 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 93 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_4_95_4_if_stmt:
         %tmp.9 = lgetv %seconds.2;
-        symbol [ seconds %tmp.9 84 8 15 ];
+        symbol [ seconds %tmp.9 93 8 15 ];
         %tmp.10 = 10;
         %tmp.11 = lt %tmp.9 %tmp.10;
-        bf %tmp.11 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_4_86_4_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_4_86_4_if_true:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_22_86_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 85 8 ]
+        bf %tmp.11 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_4_95_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_4_95_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_22_95_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 94 8 ]
         %tmp.12 = lgetv %minutes.1;
-        symbol [ minutes %tmp.12 85 15 22 ];
+        symbol [ minutes %tmp.12 94 15 22 ];
         %tmp.13 = ":0";
         %tmp.14 = add %tmp.12 %tmp.13;
         %tmp.15 = lgetv %seconds.2;
-        symbol [ seconds %tmp.15 85 32 39 ];
+        symbol [ seconds %tmp.15 94 32 39 ];
         %tmp.16 = add %tmp.14 %tmp.15;
         ret %tmp.16;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_22_86_4_stop:
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_4_86_4_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_84_4_86_4_if_end:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 88 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_22_95_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_4_95_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_93_4_95_4_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 97 4 ]
         %tmp.17 = lgetv %minutes.1;
-        symbol [ minutes %tmp.17 88 11 18 ];
+        symbol [ minutes %tmp.17 97 11 18 ];
         %tmp.18 = ":";
         %tmp.19 = add %tmp.17 %tmp.18;
         %tmp.20 = lgetv %seconds.2;
-        symbol [ seconds %tmp.20 88 27 34 ];
+        symbol [ seconds %tmp.20 97 27 34 ];
         %tmp.21 = add %tmp.19 %tmp.20;
         ret %tmp.21;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_79_41_89_0_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_88_41_98_0_stop:
     }
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 92; @symbol_functiondef = [startActivity,92,13,26]; ]
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 101; @symbol_functiondef = [startActivity,101,13,26]; ]
     function startActivity() as Void {
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_92_37_112_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 93 8 ]
-        symbol [ ActivityRecording %tmp.1 93 26 43 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_101_37_121_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 102 8 ]
+        symbol [ ActivityRecording %tmp.1 102 26 43 ];
         %tmp.1 = getm $.Toybox.ActivityRecording;
-        symbol [ createSession %tmp.2 93 44 57 ];
+        symbol [ createSession %tmp.2 102 44 57 ];
         %tmp.2 = getv function %tmp.1 :createSession;
         %tmp.3 = newd 2;
         %tmp.5 = const :name;
-        symbol [ name %tmp.5 94 9 13 const ];
+        symbol [ name %tmp.5 103 9 13 const ];
         %tmp.6 = "HYROX";
         %tmp.7 = dup %tmp.3;
         %tmp.8 = aputv %tmp.7 %tmp.5 %tmp.6;
         %tmp.10 = const :sport;
-        symbol [ sport %tmp.10 95 9 14 const ];
-        symbol [ Activity %tmp.11 95 18 26 ];
+        symbol [ sport %tmp.10 104 9 14 const ];
+        symbol [ Activity %tmp.11 104 18 26 ];
         %tmp.11 = getm $.Toybox.Activity;
-        symbol [ SPORT_GENERIC %tmp.12 95 27 40 ];
+        symbol [ SPORT_GENERIC %tmp.12 104 27 40 ];
         %tmp.12 = getv %tmp.11 :SPORT_GENERIC;
         %tmp.13 = dup %tmp.8;
         %tmp.14 = aputv %tmp.13 %tmp.10 %tmp.12;
         %tmp.15 = invoke %tmp.1 %tmp.2(%tmp.14);
-        symbol [ activitySession ? 93 8 23 ];
+        symbol [ activitySession ? 102 8 23 ];
         putv self :activitySession %tmp.15;
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 99 4 ]
-        symbol [ activitySession %tmp.17 99 19 34 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 108 4 ]
+        symbol [ activitySession %tmp.17 108 19 34 ];
         %tmp.17 = getv ? :activitySession;
-        symbol [ createField %tmp.18 99 35 46 ];
+        symbol [ createField %tmp.18 108 35 46 ];
         %tmp.18 = getv function %tmp.17 :createField;
         %tmp.19 = "MODE";
         %tmp.20 = 0;
-        symbol [ FitContributor %tmp.21 102 4 18 ];
+        symbol [ FitContributor %tmp.21 111 4 18 ];
         %tmp.21 = getm $.Toybox.FitContributor;
-        symbol [ DATA_TYPE_UINT8 %tmp.22 102 19 34 ];
+        symbol [ DATA_TYPE_UINT8 %tmp.22 111 19 34 ];
         %tmp.22 = getv %tmp.21 :DATA_TYPE_UINT8;
         %tmp.23 = newd 4;
         %tmp.25 = const :count;
-        symbol [ count %tmp.25 104 9 14 const ];
+        symbol [ count %tmp.25 113 9 14 const ];
         %tmp.26 = 1;
         %tmp.27 = dup %tmp.23;
         %tmp.28 = aputv %tmp.27 %tmp.25 %tmp.26;
         %tmp.30 = const :mesgType;
-        symbol [ mesgType %tmp.30 105 9 17 const ];
-        symbol [ FitContributor %tmp.31 105 21 35 ];
+        symbol [ mesgType %tmp.30 114 9 17 const ];
+        symbol [ FitContributor %tmp.31 114 21 35 ];
         %tmp.31 = getm $.Toybox.FitContributor;
-        symbol [ MESG_TYPE_LAP %tmp.32 105 36 49 ];
+        symbol [ MESG_TYPE_LAP %tmp.32 114 36 49 ];
         %tmp.32 = getv %tmp.31 :MESG_TYPE_LAP;
         %tmp.33 = dup %tmp.28;
         %tmp.34 = aputv %tmp.33 %tmp.30 %tmp.32;
         %tmp.36 = const :units;
-        symbol [ units %tmp.36 106 9 14 const ];
+        symbol [ units %tmp.36 115 9 14 const ];
         %tmp.37 = "";
         %tmp.38 = dup %tmp.34;
         %tmp.39 = aputv %tmp.38 %tmp.36 %tmp.37;
         %tmp.41 = const :nativeNum;
-        symbol [ nativeNum %tmp.41 107 9 18 const ];
+        symbol [ nativeNum %tmp.41 116 9 18 const ];
         %tmp.42 = 0;
         %tmp.43 = dup %tmp.39;
         %tmp.44 = aputv %tmp.43 %tmp.41 %tmp.42;
         %tmp.45 = invoke %tmp.17 %tmp.18(%tmp.19, %tmp.20, %tmp.22, %tmp.44);
-        symbol [ lapModeField ? 99 4 16 ];
+        symbol [ lapModeField ? 108 4 16 ];
         putv self :lapModeField %tmp.45;
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 111 4 ]
-        symbol [ activitySession %tmp.47 111 4 19 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 120 4 ]
+        symbol [ activitySession %tmp.47 120 4 19 ];
         %tmp.47 = getv ? :activitySession;
-        symbol [ start %tmp.48 111 20 25 ];
+        symbol [ start %tmp.48 120 20 25 ];
         %tmp.48 = getv function %tmp.47 :start;
         invoke %tmp.47 %tmp.48();
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_92_37_112_4_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_101_37_121_4_stop:
     }
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 115; @symbol_functiondef = [buildWorkoutStations,115,9,29]; ]
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 124; @symbol_functiondef = [buildWorkoutStations,124,9,29]; ]
     function buildWorkoutStations() as Void {
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_115_40_124_0_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 117 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_124_40_133_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 126 4 ]
         %tmp.1 = newa 0;
-        symbol [ workoutStations ? 117 4 19 ];
+        symbol [ workoutStations ? 126 4 19 ];
         putv self :workoutStations %tmp.1;
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 119 4 ]
-        for @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_test @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_incr @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_init:
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_begin" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_end" ]
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 128 4 ]
+        for @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_test @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_incr @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_init:
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_begin" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_end" ]
         %i.1 = local;
-        symbol [ i %i.1 119 13 14 ];
+        symbol [ i %i.1 128 13 14 ];
         %tmp.2 = 0;
         lputv %i.1 %tmp.2;
-        symbol [ i %i.1 119 13 14 ];
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_test:
+        symbol [ i %i.1 128 13 14 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_test:
         %tmp.3 = lgetv %i.1;
-        symbol [ i %tmp.3 119 20 21 ];
-        symbol [ stations %tmp.5 119 24 32 ];
+        symbol [ i %tmp.3 128 20 21 ];
+        symbol [ stations %tmp.5 128 24 32 ];
         %tmp.5 = getv ? :stations;
-        symbol [ size %tmp.6 119 33 37 ];
+        symbol [ size %tmp.6 128 33 37 ];
         %tmp.6 = getv function %tmp.5 :size;
         %tmp.7 = invoke %tmp.5 %tmp.6();
         %tmp.8 = lt %tmp.3 %tmp.7;
-        bf %tmp.8 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_begin:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_46_123_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 120 8 ]
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_8_122_8_if_stmt:
-        symbol [ enabledStations %tmp.10 120 12 27 ];
+        bf %tmp.8 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_begin:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_46_132_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 129 8 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_8_131_8_if_stmt:
+        symbol [ enabledStations %tmp.10 129 12 27 ];
         %tmp.10 = getv ? :enabledStations;
         %tmp.11 = lgetv %i.1;
-        symbol [ i %tmp.11 120 28 29 ];
+        symbol [ i %tmp.11 129 28 29 ];
         %tmp.12 = agetv %tmp.10 %tmp.11;
-        bf %tmp.12 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_8_122_8_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_8_122_8_if_true:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_32_122_8_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 121 12 ]
-        symbol [ workoutStations %tmp.14 121 12 27 ];
+        bf %tmp.12 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_8_131_8_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_8_131_8_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_32_131_8_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 130 12 ]
+        symbol [ workoutStations %tmp.14 130 12 27 ];
         %tmp.14 = getv ? :workoutStations;
-        symbol [ add %tmp.15 121 28 31 ];
+        symbol [ add %tmp.15 130 28 31 ];
         %tmp.15 = getv function %tmp.14 :add;
-        symbol [ stations %tmp.17 121 32 40 ];
+        symbol [ stations %tmp.17 130 32 40 ];
         %tmp.17 = getv ? :stations;
         %tmp.18 = lgetv %i.1;
-        symbol [ i %tmp.18 121 41 42 ];
+        symbol [ i %tmp.18 130 41 42 ];
         %tmp.19 = agetv %tmp.17 %tmp.18;
         invoke %tmp.14 %tmp.15(%tmp.19);
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_32_122_8_stop:
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_8_122_8_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_120_8_122_8_if_end:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_46_123_4_stop:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_incr:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 119 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_32_131_8_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_8_131_8_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_129_8_131_8_if_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_46_132_4_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_incr:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 128 ]
         %tmp.22 = lgetv %i.1;
-        symbol [ i %tmp.22 119 41 42 ];
+        symbol [ i %tmp.22 128 41 42 ];
         %tmp.23 = add %tmp.22 1;
         lputv %i.1 %tmp.23;
-        symbol [ i %i.1 119 41 42 ];
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_test;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_119_4_123_4_for_end:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_115_40_124_0_stop:
+        symbol [ i %i.1 128 41 42 ];
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_test;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_128_4_132_4_for_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_124_40_133_0_stop:
     }
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 125; @symbol_functiondef = [onUpdate,125,13,21]; @symbol_param<0> = [dc,125,22,24]; @symbol_param<0>_type<0> = [Dc,125,28,30]; ]
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 134; @symbol_functiondef = [onUpdate,134,13,21]; @symbol_param<0> = [dc,134,22,24]; @symbol_param<0>_type<0> = [Dc,134,28,30]; ]
     function onUpdate(dc as Dc) as Void {
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 127 8 ]
-        symbol [ View %tmp.2 127 8 12 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 136 8 ]
+        symbol [ View %tmp.2 136 8 12 ];
         %tmp.2 = getv ? :View;
-        symbol [ onUpdate %tmp.3 127 13 21 ];
+        symbol [ onUpdate %tmp.3 136 13 21 ];
         %tmp.3 = getv function %tmp.2 :onUpdate;
         %tmp.4 = lgetv %dc;
-        symbol [ dc %tmp.4 127 22 24 ];
+        symbol [ dc %tmp.4 136 22 24 ];
         invoke %tmp.2 %tmp.3(%tmp.4);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 130 8 ]
-        symbol [ System %tmp.5 130 8 14 ];
-        %tmp.5 = getm $.Toybox.System;
-        symbol [ println %tmp.6 130 15 22 ];
-        %tmp.6 = getv function %tmp.5 :println;
-        %tmp.7 = "Station 1 = ";
-        symbol [ enabledStations %tmp.9 130 40 55 ];
-        %tmp.9 = getv ? :enabledStations;
-        %tmp.10 = 0;
-        %tmp.11 = agetv %tmp.9 %tmp.10;
-        %tmp.12 = add %tmp.7 %tmp.11;
-        invoke %tmp.5 %tmp.6(%tmp.12);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 133 8 ]
-        symbol [ workoutStations %tmp.14 133 21 36 ];
-        %tmp.14 = getv ? :workoutStations;
-        symbol [ currentStation %tmp.16 133 37 51 ];
-        %tmp.16 = getv ? :currentStation;
-        %tmp.17 = agetv %tmp.14 %tmp.16;
-        symbol [ nomStation ? 133 8 18 ];
-        putv self :nomStation %tmp.17;
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 136 8 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop" ]
-        %info.1 = local;
-        symbol [ info %info.1 136 12 16 ];
-        symbol [ Activity %tmp.18 136 19 27 ];
-        %tmp.18 = getm $.Toybox.Activity;
-        symbol [ getActivityInfo %tmp.19 136 28 43 ];
-        %tmp.19 = getv function %tmp.18 :getActivityInfo;
-        %tmp.20 = invoke %tmp.18 %tmp.19();
-        lputv %info.1 %tmp.20;
-        symbol [ info %info.1 136 12 16 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 138 8 ]
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_8_142_8_if_stmt:
-        %tmp.21 = lgetv %info.1;
-        symbol [ info %tmp.21 138 12 16 ];
-        symbol [ currentHeartRate %tmp.22 138 17 33 ];
-        %tmp.22 = getv %tmp.21 :currentHeartRate;
-        %tmp.23 = null;
-        %tmp.24 = ne %tmp.22 %tmp.23;
-        bf %tmp.24 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_8_142_8_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_8_142_8_if_true:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_43_142_8_start:
 [ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 139 8 ]
-        %tmp.25 = lgetv %info.1;
-        symbol [ info %tmp.25 139 20 24 ];
-        symbol [ currentHeartRate %tmp.26 139 25 41 ];
-        %tmp.26 = getv %tmp.25 :currentHeartRate;
-        symbol [ heartRate ? 139 8 17 ];
-        putv self :heartRate %tmp.26;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_43_142_8_stop:
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_8_142_8_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_138_8_142_8_if_end:
+        symbol [ workoutStations %tmp.6 139 21 36 ];
+        %tmp.6 = getv ? :workoutStations;
+        symbol [ currentStation %tmp.8 139 37 51 ];
+        %tmp.8 = getv ? :currentStation;
+        %tmp.9 = agetv %tmp.6 %tmp.8;
+        symbol [ nomStation ? 139 8 18 ];
+        putv self :nomStation %tmp.9;
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 142 8 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop" ]
+        %info.1 = local;
+        symbol [ info %info.1 142 12 16 ];
+        symbol [ Activity %tmp.10 142 19 27 ];
+        %tmp.10 = getm $.Toybox.Activity;
+        symbol [ getActivityInfo %tmp.11 142 28 43 ];
+        %tmp.11 = getv function %tmp.10 :getActivityInfo;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        lputv %info.1 %tmp.12;
+        symbol [ info %info.1 142 12 16 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 144 8 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_8_148_8_if_stmt:
+        %tmp.13 = lgetv %info.1;
+        symbol [ info %tmp.13 144 12 16 ];
+        symbol [ currentHeartRate %tmp.14 144 17 33 ];
+        %tmp.14 = getv %tmp.13 :currentHeartRate;
+        %tmp.15 = null;
+        %tmp.16 = ne %tmp.14 %tmp.15;
+        bf %tmp.16 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_8_148_8_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_8_148_8_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_43_148_8_start:
 [ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 145 8 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop" ]
+        %tmp.17 = lgetv %info.1;
+        symbol [ info %tmp.17 145 20 24 ];
+        symbol [ currentHeartRate %tmp.18 145 25 41 ];
+        %tmp.18 = getv %tmp.17 :currentHeartRate;
+        symbol [ heartRate ? 145 8 17 ];
+        putv self :heartRate %tmp.18;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_43_148_8_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_8_148_8_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_144_8_148_8_if_end:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 151 8 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop" ]
         %width.2 = local;
-        symbol [ width %width.2 145 12 17 ];
-        %tmp.27 = lgetv %dc;
-        symbol [ dc %tmp.27 145 20 22 ];
-        symbol [ getWidth %tmp.28 145 23 31 ];
-        %tmp.28 = getv function %tmp.27 :getWidth;
-        %tmp.29 = invoke %tmp.27 %tmp.28();
-        lputv %width.2 %tmp.29;
-        symbol [ width %width.2 145 12 17 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 146 8 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop" ]
+        symbol [ width %width.2 151 12 17 ];
+        %tmp.19 = lgetv %dc;
+        symbol [ dc %tmp.19 151 20 22 ];
+        symbol [ getWidth %tmp.20 151 23 31 ];
+        %tmp.20 = getv function %tmp.19 :getWidth;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        lputv %width.2 %tmp.21;
+        symbol [ width %width.2 151 12 17 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 152 8 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop" ]
         %height.3 = local;
-        symbol [ height %height.3 146 12 18 ];
-        %tmp.30 = lgetv %dc;
-        symbol [ dc %tmp.30 146 21 23 ];
-        symbol [ getHeight %tmp.31 146 24 33 ];
-        %tmp.31 = getv function %tmp.30 :getHeight;
-        %tmp.32 = invoke %tmp.30 %tmp.31();
-        lputv %height.3 %tmp.32;
-        symbol [ height %height.3 146 12 18 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 148 8 ]
+        symbol [ height %height.3 152 12 18 ];
+        %tmp.22 = lgetv %dc;
+        symbol [ dc %tmp.22 152 21 23 ];
+        symbol [ getHeight %tmp.23 152 24 33 ];
+        %tmp.23 = getv function %tmp.22 :getHeight;
+        %tmp.24 = invoke %tmp.22 %tmp.23();
+        lputv %height.3 %tmp.24;
+        symbol [ height %height.3 152 12 18 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 154 8 ]
+        %tmp.25 = lgetv %dc;
+        symbol [ dc %tmp.25 154 8 10 ];
+        symbol [ setColor %tmp.26 154 11 19 ];
+        %tmp.26 = getv function %tmp.25 :setColor;
+        symbol [ Graphics %tmp.27 155 12 20 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.28 155 21 32 ];
+        %tmp.28 = getv %tmp.27 :COLOR_BLACK;
+        symbol [ Graphics %tmp.29 156 12 20 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.30 156 21 32 ];
+        %tmp.30 = getv %tmp.29 :COLOR_BLACK;
+        invoke %tmp.25 %tmp.26(%tmp.28, %tmp.30);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 159 8 ]
+        %tmp.31 = lgetv %dc;
+        symbol [ dc %tmp.31 159 8 10 ];
+        symbol [ clear %tmp.32 159 11 16 ];
+        %tmp.32 = getv function %tmp.31 :clear;
+        invoke %tmp.31 %tmp.32();
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 161 8 ]
         %tmp.33 = lgetv %dc;
-        symbol [ dc %tmp.33 148 8 10 ];
-        symbol [ setColor %tmp.34 148 11 19 ];
+        symbol [ dc %tmp.33 161 8 10 ];
+        symbol [ setColor %tmp.34 161 11 19 ];
         %tmp.34 = getv function %tmp.33 :setColor;
-        symbol [ Graphics %tmp.35 149 12 20 ];
+        symbol [ Graphics %tmp.35 162 12 20 ];
         %tmp.35 = getm $.Toybox.Graphics;
-        symbol [ COLOR_BLACK %tmp.36 149 21 32 ];
-        %tmp.36 = getv %tmp.35 :COLOR_BLACK;
-        symbol [ Graphics %tmp.37 150 12 20 ];
+        symbol [ COLOR_WHITE %tmp.36 162 21 32 ];
+        %tmp.36 = getv %tmp.35 :COLOR_WHITE;
+        symbol [ Graphics %tmp.37 163 12 20 ];
         %tmp.37 = getm $.Toybox.Graphics;
-        symbol [ COLOR_BLACK %tmp.38 150 21 32 ];
-        %tmp.38 = getv %tmp.37 :COLOR_BLACK;
+        symbol [ COLOR_TRANSPARENT %tmp.38 163 21 38 ];
+        %tmp.38 = getv %tmp.37 :COLOR_TRANSPARENT;
         invoke %tmp.33 %tmp.34(%tmp.36, %tmp.38);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 153 8 ]
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 166 8 ]
         %tmp.39 = lgetv %dc;
-        symbol [ dc %tmp.39 153 8 10 ];
-        symbol [ clear %tmp.40 153 11 16 ];
-        %tmp.40 = getv function %tmp.39 :clear;
-        invoke %tmp.39 %tmp.40();
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 155 8 ]
-        %tmp.41 = lgetv %dc;
-        symbol [ dc %tmp.41 155 8 10 ];
-        symbol [ setColor %tmp.42 155 11 19 ];
-        %tmp.42 = getv function %tmp.41 :setColor;
-        symbol [ Graphics %tmp.43 156 12 20 ];
-        %tmp.43 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.44 156 21 32 ];
-        %tmp.44 = getv %tmp.43 :COLOR_WHITE;
-        symbol [ Graphics %tmp.45 157 12 20 ];
-        %tmp.45 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.46 157 21 38 ];
-        %tmp.46 = getv %tmp.45 :COLOR_TRANSPARENT;
-        invoke %tmp.41 %tmp.42(%tmp.44, %tmp.46);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 160 8 ]
-        %tmp.47 = lgetv %dc;
-        symbol [ dc %tmp.47 160 8 10 ];
-        symbol [ drawText %tmp.48 160 11 19 ];
-        %tmp.48 = getv function %tmp.47 :drawText;
-        %tmp.49 = lgetv %width.2;
-        symbol [ width %tmp.49 161 12 17 ];
-        %tmp.50 = 2;
-        %tmp.51 = div %tmp.49 %tmp.50;
-        %tmp.52 = lgetv %height.3;
-        symbol [ height %tmp.52 162 12 18 ];
-        %tmp.53 = 2;
-        %tmp.54 = div %tmp.52 %tmp.53;
-        symbol [ Graphics %tmp.55 163 12 20 ];
-        %tmp.55 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.56 163 21 32 ];
-        %tmp.56 = getv %tmp.55 :FONT_MEDIUM;
-        %tmp.57 = "TRAINING";
-        symbol [ Graphics %tmp.58 165 12 20 ];
-        %tmp.58 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.59 165 21 40 ];
-        %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.47 %tmp.48(%tmp.51, %tmp.54, %tmp.56, %tmp.57, %tmp.59);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 167 8 ]
-        %tmp.60 = lgetv %dc;
-        symbol [ dc %tmp.60 167 8 10 ];
-        symbol [ drawText %tmp.61 167 11 19 ];
-        %tmp.61 = getv function %tmp.60 :drawText;
-        %tmp.62 = lgetv %width.2;
-        symbol [ width %tmp.62 168 12 17 ];
-        %tmp.63 = 2;
-        %tmp.64 = div %tmp.62 %tmp.63;
-        %tmp.65 = lgetv %height.3;
-        symbol [ height %tmp.65 169 12 18 ];
-        %tmp.66 = 3;
-        %tmp.67 = div %tmp.65 %tmp.66;
-        symbol [ Graphics %tmp.68 170 12 20 ];
-        %tmp.68 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.69 170 21 32 ];
-        %tmp.69 = getv %tmp.68 :FONT_MEDIUM;
-        %tmp.70 = "Station: ";
-        symbol [ currentStation %tmp.72 171 27 41 ];
-        %tmp.72 = getv ? :currentStation;
-        %tmp.73 = 1;
-        %tmp.74 = add %tmp.72 %tmp.73;
-        %tmp.75 = add %tmp.70 %tmp.74;
-        %tmp.76 = " / ";
-        %tmp.77 = add %tmp.75 %tmp.76;
-        symbol [ workoutStations %tmp.79 171 56 71 ];
-        %tmp.79 = getv ? :workoutStations;
-        symbol [ size %tmp.80 171 72 76 ];
-        %tmp.80 = getv function %tmp.79 :size;
-        %tmp.81 = invoke %tmp.79 %tmp.80();
-        %tmp.82 = add %tmp.77 %tmp.81;
-        %tmp.83 = " ";
-        %tmp.84 = add %tmp.82 %tmp.83;
-        symbol [ nomStation %tmp.86 171 87 97 ];
-        %tmp.86 = getv ? :nomStation;
-        %tmp.87 = add %tmp.84 %tmp.86;
-        symbol [ Graphics %tmp.88 172 12 20 ];
-        %tmp.88 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.89 172 21 40 ];
-        %tmp.89 = getv %tmp.88 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.60 %tmp.61(%tmp.64, %tmp.67, %tmp.69, %tmp.87, %tmp.89);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 175 8 ]
-        %tmp.90 = lgetv %dc;
-        symbol [ dc %tmp.90 175 8 10 ];
-        symbol [ drawText %tmp.91 175 11 19 ];
-        %tmp.91 = getv function %tmp.90 :drawText;
-        %tmp.92 = lgetv %width.2;
-        symbol [ width %tmp.92 176 12 17 ];
-        %tmp.93 = 2;
-        %tmp.94 = div %tmp.92 %tmp.93;
-        %tmp.95 = lgetv %height.3;
-        symbol [ height %tmp.95 177 12 18 ];
-        %tmp.96 = 4;
-        %tmp.97 = div %tmp.95 %tmp.96;
-        symbol [ Graphics %tmp.98 178 12 20 ];
-        %tmp.98 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.99 178 21 32 ];
-        %tmp.99 = getv %tmp.98 :FONT_MEDIUM;
-        %tmp.100 = "total : ";
-        %tmp.101 = self;
-        symbol [ getTotalTime %tmp.102 179 24 36 ];
-        %tmp.102 = getv function %tmp.101 :getTotalTime;
-        %tmp.103 = invoke %tmp.101 %tmp.102();
-        %tmp.104 = add %tmp.100 %tmp.103;
-        symbol [ Graphics %tmp.105 180 14 22 ];
-        %tmp.105 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.106 180 23 42 ];
-        %tmp.106 = getv %tmp.105 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.90 %tmp.91(%tmp.94, %tmp.97, %tmp.99, %tmp.104, %tmp.106);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 182 8 ]
-        %tmp.107 = lgetv %dc;
-        symbol [ dc %tmp.107 182 8 10 ];
-        symbol [ drawText %tmp.108 182 11 19 ];
-        %tmp.108 = getv function %tmp.107 :drawText;
-        %tmp.109 = lgetv %width.2;
-        symbol [ width %tmp.109 183 12 17 ];
-        %tmp.110 = 2;
-        %tmp.111 = div %tmp.109 %tmp.110;
-        %tmp.112 = lgetv %height.3;
-        symbol [ height %tmp.112 184 12 18 ];
-        %tmp.113 = 1.5;
-        %tmp.114 = div %tmp.112 %tmp.113;
-        symbol [ Graphics %tmp.115 185 12 20 ];
-        %tmp.115 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.116 185 21 32 ];
-        %tmp.116 = getv %tmp.115 :FONT_MEDIUM;
-        %tmp.117 = "total : ";
-        %tmp.118 = self;
-        symbol [ getStationTime %tmp.119 186 24 38 ];
-        %tmp.119 = getv function %tmp.118 :getStationTime;
-        %tmp.120 = invoke %tmp.118 %tmp.119();
-        %tmp.121 = add %tmp.117 %tmp.120;
-        symbol [ Graphics %tmp.122 187 14 22 ];
-        %tmp.122 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.123 187 23 42 ];
-        %tmp.123 = getv %tmp.122 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.107 %tmp.108(%tmp.111, %tmp.114, %tmp.116, %tmp.121, %tmp.123);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 190 8 ]
-        %tmp.124 = lgetv %dc;
-        symbol [ dc %tmp.124 190 8 10 ];
-        symbol [ drawText %tmp.125 190 11 19 ];
-        %tmp.125 = getv function %tmp.124 :drawText;
-        %tmp.126 = lgetv %width.2;
-        symbol [ width %tmp.126 191 13 18 ];
-        %tmp.127 = 2;
-        %tmp.128 = div %tmp.126 %tmp.127;
-        %tmp.129 = lgetv %height.3;
-        symbol [ height %tmp.129 192 12 18 ];
-        %tmp.130 = 5;
-        %tmp.131 = mul %tmp.129 %tmp.130;
-        %tmp.132 = 6;
-        %tmp.133 = div %tmp.131 %tmp.132;
-        symbol [ Graphics %tmp.134 193 12 20 ];
+        symbol [ dc %tmp.39 166 8 10 ];
+        symbol [ drawText %tmp.40 166 11 19 ];
+        %tmp.40 = getv function %tmp.39 :drawText;
+        %tmp.41 = lgetv %width.2;
+        symbol [ width %tmp.41 167 12 17 ];
+        %tmp.42 = 2;
+        %tmp.43 = div %tmp.41 %tmp.42;
+        %tmp.44 = lgetv %height.3;
+        symbol [ height %tmp.44 168 12 18 ];
+        %tmp.45 = 2;
+        %tmp.46 = div %tmp.44 %tmp.45;
+        symbol [ Graphics %tmp.47 169 12 20 ];
+        %tmp.47 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.48 169 21 32 ];
+        %tmp.48 = getv %tmp.47 :FONT_MEDIUM;
+        %tmp.49 = "TRAINING";
+        symbol [ Graphics %tmp.50 171 12 20 ];
+        %tmp.50 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.51 171 21 40 ];
+        %tmp.51 = getv %tmp.50 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.39 %tmp.40(%tmp.43, %tmp.46, %tmp.48, %tmp.49, %tmp.51);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 173 8 ]
+        %tmp.52 = lgetv %dc;
+        symbol [ dc %tmp.52 173 8 10 ];
+        symbol [ drawText %tmp.53 173 11 19 ];
+        %tmp.53 = getv function %tmp.52 :drawText;
+        %tmp.54 = lgetv %width.2;
+        symbol [ width %tmp.54 174 12 17 ];
+        %tmp.55 = 2;
+        %tmp.56 = div %tmp.54 %tmp.55;
+        %tmp.57 = lgetv %height.3;
+        symbol [ height %tmp.57 175 12 18 ];
+        %tmp.58 = 3;
+        %tmp.59 = div %tmp.57 %tmp.58;
+        symbol [ Graphics %tmp.60 176 12 20 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.61 176 21 32 ];
+        %tmp.61 = getv %tmp.60 :FONT_MEDIUM;
+        %tmp.62 = "Station: ";
+        symbol [ currentStation %tmp.64 177 27 41 ];
+        %tmp.64 = getv ? :currentStation;
+        %tmp.65 = 1;
+        %tmp.66 = add %tmp.64 %tmp.65;
+        %tmp.67 = add %tmp.62 %tmp.66;
+        %tmp.68 = " / ";
+        %tmp.69 = add %tmp.67 %tmp.68;
+        symbol [ workoutStations %tmp.71 177 56 71 ];
+        %tmp.71 = getv ? :workoutStations;
+        symbol [ size %tmp.72 177 72 76 ];
+        %tmp.72 = getv function %tmp.71 :size;
+        %tmp.73 = invoke %tmp.71 %tmp.72();
+        %tmp.74 = add %tmp.69 %tmp.73;
+        %tmp.75 = " ";
+        %tmp.76 = add %tmp.74 %tmp.75;
+        symbol [ nomStation %tmp.78 177 87 97 ];
+        %tmp.78 = getv ? :nomStation;
+        %tmp.79 = add %tmp.76 %tmp.78;
+        symbol [ Graphics %tmp.80 178 12 20 ];
+        %tmp.80 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.81 178 21 40 ];
+        %tmp.81 = getv %tmp.80 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.52 %tmp.53(%tmp.56, %tmp.59, %tmp.61, %tmp.79, %tmp.81);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 181 8 ]
+        %tmp.82 = lgetv %dc;
+        symbol [ dc %tmp.82 181 8 10 ];
+        symbol [ drawText %tmp.83 181 11 19 ];
+        %tmp.83 = getv function %tmp.82 :drawText;
+        %tmp.84 = lgetv %width.2;
+        symbol [ width %tmp.84 182 12 17 ];
+        %tmp.85 = 2;
+        %tmp.86 = div %tmp.84 %tmp.85;
+        %tmp.87 = lgetv %height.3;
+        symbol [ height %tmp.87 183 12 18 ];
+        %tmp.88 = 4;
+        %tmp.89 = div %tmp.87 %tmp.88;
+        symbol [ Graphics %tmp.90 184 12 20 ];
+        %tmp.90 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.91 184 21 32 ];
+        %tmp.91 = getv %tmp.90 :FONT_MEDIUM;
+        %tmp.92 = "total : ";
+        %tmp.93 = self;
+        symbol [ getTotalTime %tmp.94 185 24 36 ];
+        %tmp.94 = getv function %tmp.93 :getTotalTime;
+        %tmp.95 = invoke %tmp.93 %tmp.94();
+        %tmp.96 = add %tmp.92 %tmp.95;
+        symbol [ Graphics %tmp.97 186 14 22 ];
+        %tmp.97 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.98 186 23 42 ];
+        %tmp.98 = getv %tmp.97 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.82 %tmp.83(%tmp.86, %tmp.89, %tmp.91, %tmp.96, %tmp.98);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 188 8 ]
+        %tmp.99 = lgetv %dc;
+        symbol [ dc %tmp.99 188 8 10 ];
+        symbol [ drawText %tmp.100 188 11 19 ];
+        %tmp.100 = getv function %tmp.99 :drawText;
+        %tmp.101 = lgetv %width.2;
+        symbol [ width %tmp.101 189 12 17 ];
+        %tmp.102 = 2;
+        %tmp.103 = div %tmp.101 %tmp.102;
+        %tmp.104 = lgetv %height.3;
+        symbol [ height %tmp.104 190 12 18 ];
+        %tmp.105 = 1.5;
+        %tmp.106 = div %tmp.104 %tmp.105;
+        symbol [ Graphics %tmp.107 191 12 20 ];
+        %tmp.107 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.108 191 21 32 ];
+        %tmp.108 = getv %tmp.107 :FONT_MEDIUM;
+        %tmp.109 = "total : ";
+        %tmp.110 = self;
+        symbol [ getStationTime %tmp.111 192 24 38 ];
+        %tmp.111 = getv function %tmp.110 :getStationTime;
+        %tmp.112 = invoke %tmp.110 %tmp.111();
+        %tmp.113 = add %tmp.109 %tmp.112;
+        symbol [ Graphics %tmp.114 193 14 22 ];
+        %tmp.114 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.115 193 23 42 ];
+        %tmp.115 = getv %tmp.114 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.99 %tmp.100(%tmp.103, %tmp.106, %tmp.108, %tmp.113, %tmp.115);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 196 8 ]
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 196 8 10 ];
+        symbol [ drawText %tmp.117 196 11 19 ];
+        %tmp.117 = getv function %tmp.116 :drawText;
+        %tmp.118 = lgetv %width.2;
+        symbol [ width %tmp.118 197 13 18 ];
+        %tmp.119 = 2;
+        %tmp.120 = div %tmp.118 %tmp.119;
+        %tmp.121 = lgetv %height.3;
+        symbol [ height %tmp.121 198 12 18 ];
+        %tmp.122 = 5;
+        %tmp.123 = mul %tmp.121 %tmp.122;
+        %tmp.124 = 6;
+        %tmp.125 = div %tmp.123 %tmp.124;
+        symbol [ Graphics %tmp.126 199 12 20 ];
+        %tmp.126 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.127 199 21 32 ];
+        %tmp.127 = getv %tmp.126 :FONT_MEDIUM;
+        %tmp.128 = "HR : ";
+        symbol [ heartRate %tmp.130 200 22 31 ];
+        %tmp.130 = getv ? :heartRate;
+        %tmp.131 = add %tmp.128 %tmp.130;
+        %tmp.132 = " BPM";
+        %tmp.133 = add %tmp.131 %tmp.132;
+        symbol [ Graphics %tmp.134 201 12 20 ];
         %tmp.134 = getm $.Toybox.Graphics;
-        symbol [ FONT_MEDIUM %tmp.135 193 21 32 ];
-        %tmp.135 = getv %tmp.134 :FONT_MEDIUM;
-        %tmp.136 = "HR : ";
-        symbol [ heartRate %tmp.138 194 22 31 ];
-        %tmp.138 = getv ? :heartRate;
-        %tmp.139 = add %tmp.136 %tmp.138;
-        %tmp.140 = " BPM";
-        %tmp.141 = add %tmp.139 %tmp.140;
-        symbol [ Graphics %tmp.142 195 12 20 ];
-        %tmp.142 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.143 195 21 40 ];
-        %tmp.143 = getv %tmp.142 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.124 %tmp.125(%tmp.128, %tmp.133, %tmp.135, %tmp.141, %tmp.143);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 198 8 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop" ]
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.135 201 21 40 ];
+        %tmp.135 = getv %tmp.134 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.116 %tmp.117(%tmp.120, %tmp.125, %tmp.127, %tmp.133, %tmp.135);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 204 8 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop" ]
         %totalStations.4 = local;
-        symbol [ totalStations %totalStations.4 198 12 25 ];
-        symbol [ workoutStations %tmp.145 198 28 43 ];
-        %tmp.145 = getv ? :workoutStations;
-        symbol [ size %tmp.146 198 44 48 ];
-        %tmp.146 = getv function %tmp.145 :size;
-        %tmp.147 = invoke %tmp.145 %tmp.146();
-        lputv %totalStations.4 %tmp.147;
-        symbol [ totalStations %totalStations.4 198 12 25 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 199 0 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop" ]
+        symbol [ totalStations %totalStations.4 204 12 25 ];
+        symbol [ workoutStations %tmp.137 204 28 43 ];
+        %tmp.137 = getv ? :workoutStations;
+        symbol [ size %tmp.138 204 44 48 ];
+        %tmp.138 = getv function %tmp.137 :size;
+        %tmp.139 = invoke %tmp.137 %tmp.138();
+        lputv %totalStations.4 %tmp.139;
+        symbol [ totalStations %totalStations.4 204 12 25 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 205 0 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop" ]
         %progressY.5 = local;
-        symbol [ progressY %progressY.5 199 4 13 ];
-        %tmp.148 = lgetv %height.3;
-        symbol [ height %tmp.148 199 16 22 ];
-        %tmp.149 = 25;
-        %tmp.150 = sub %tmp.148 %tmp.149;
-        lputv %progressY.5 %tmp.150;
-        symbol [ progressY %progressY.5 199 4 13 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 201 0 ]
-        for @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_test @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_incr @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_init:
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_begin" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_end" ]
+        symbol [ progressY %progressY.5 205 4 13 ];
+        %tmp.140 = lgetv %height.3;
+        symbol [ height %tmp.140 205 16 22 ];
+        %tmp.141 = 25;
+        %tmp.142 = sub %tmp.140 %tmp.141;
+        lputv %progressY.5 %tmp.142;
+        symbol [ progressY %progressY.5 205 4 13 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 207 0 ]
+        for @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_test @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_incr @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_init:
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_begin" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_end" ]
         %i.6 = local;
-        symbol [ i %i.6 201 9 10 ];
-        %tmp.151 = 0;
-        lputv %i.6 %tmp.151;
-        symbol [ i %i.6 201 9 10 ];
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_test:
-        %tmp.152 = lgetv %i.6;
-        symbol [ i %tmp.152 201 16 17 ];
-        %tmp.153 = lgetv %totalStations.4;
-        symbol [ totalStations %tmp.153 201 20 33 ];
-        %tmp.154 = lt %tmp.152 %tmp.153;
-        bf %tmp.154 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_begin:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_40_212_0_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 203 4 ]
-        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_40_212_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_40_212_0_stop" ]
+        symbol [ i %i.6 207 9 10 ];
+        %tmp.143 = 0;
+        lputv %i.6 %tmp.143;
+        symbol [ i %i.6 207 9 10 ];
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_test:
+        %tmp.144 = lgetv %i.6;
+        symbol [ i %tmp.144 207 16 17 ];
+        %tmp.145 = lgetv %totalStations.4;
+        symbol [ totalStations %tmp.145 207 20 33 ];
+        %tmp.146 = lt %tmp.144 %tmp.145;
+        bf %tmp.146 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_begin:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_40_218_0_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 209 4 ]
+        [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_40_218_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_40_218_0_stop" ]
         %x.7 = local;
-        symbol [ x %x.7 203 8 9 ];
-        %tmp.155 = lgetv %width.2;
-        symbol [ width %tmp.155 203 12 17 ];
-        %tmp.156 = 2;
-        %tmp.157 = div %tmp.155 %tmp.156;
-        %tmp.158 = lgetv %totalStations.4;
-        symbol [ totalStations %tmp.158 203 26 39 ];
-        %tmp.159 = 1;
-        %tmp.160 = sub %tmp.158 %tmp.159;
-        %tmp.161 = 10;
-        %tmp.162 = mul %tmp.160 %tmp.161;
-        %tmp.163 = sub %tmp.157 %tmp.162;
-        %tmp.164 = lgetv %i.6;
-        symbol [ i %tmp.164 203 54 55 ];
-        %tmp.165 = 20;
-        %tmp.166 = mul %tmp.164 %tmp.165;
-        %tmp.167 = add %tmp.163 %tmp.166;
-        lputv %x.7 %tmp.167;
-        symbol [ x %x.7 203 8 9 ];
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 205 4 ]
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_stmt:
-        %tmp.168 = lgetv %i.6;
-        symbol [ i %tmp.168 205 8 9 ];
-        symbol [ currentStation %tmp.170 205 13 27 ];
-        %tmp.170 = getv ? :currentStation;
-        %tmp.171 = lte %tmp.168 %tmp.170;
-        bf %tmp.171 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_else_false;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_true:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_29_208_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 206 8 ]
-        %tmp.172 = lgetv %dc;
-        symbol [ dc %tmp.172 206 8 10 ];
-        symbol [ setColor %tmp.173 206 11 19 ];
-        %tmp.173 = getv function %tmp.172 :setColor;
-        symbol [ Graphics %tmp.174 206 20 28 ];
-        %tmp.174 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.175 206 29 40 ];
-        %tmp.175 = getv %tmp.174 :COLOR_WHITE;
-        symbol [ Graphics %tmp.176 206 42 50 ];
-        %tmp.176 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.177 206 51 62 ];
-        %tmp.177 = getv %tmp.176 :COLOR_WHITE;
-        invoke %tmp.172 %tmp.173(%tmp.175, %tmp.177);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 207 8 ]
-        %tmp.178 = lgetv %dc;
-        symbol [ dc %tmp.178 207 8 10 ];
-        symbol [ fillCircle %tmp.179 207 11 21 ];
-        %tmp.179 = getv function %tmp.178 :fillCircle;
-        %tmp.180 = lgetv %x.7;
-        symbol [ x %tmp.180 207 22 23 ];
-        %tmp.181 = lgetv %progressY.5;
-        symbol [ progressY %tmp.181 207 25 34 ];
-        %tmp.182 = 4;
-        invoke %tmp.178 %tmp.179(%tmp.180, %tmp.181, %tmp.182);
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_29_208_4_stop:
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_end;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_else_false:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_208_11_211_4_start:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 209 8 ]
-        %tmp.183 = lgetv %dc;
-        symbol [ dc %tmp.183 209 8 10 ];
-        symbol [ setColor %tmp.184 209 11 19 ];
-        %tmp.184 = getv function %tmp.183 :setColor;
-        symbol [ Graphics %tmp.185 209 20 28 ];
-        %tmp.185 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.186 209 29 40 ];
-        %tmp.186 = getv %tmp.185 :COLOR_WHITE;
-        symbol [ Graphics %tmp.187 209 42 50 ];
-        %tmp.187 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.188 209 51 68 ];
-        %tmp.188 = getv %tmp.187 :COLOR_TRANSPARENT;
-        invoke %tmp.183 %tmp.184(%tmp.186, %tmp.188);
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 210 8 ]
-        %tmp.189 = lgetv %dc;
-        symbol [ dc %tmp.189 210 8 10 ];
-        symbol [ drawCircle %tmp.190 210 11 21 ];
-        %tmp.190 = getv function %tmp.189 :drawCircle;
-        %tmp.191 = lgetv %x.7;
-        symbol [ x %tmp.191 210 22 23 ];
-        %tmp.192 = lgetv %progressY.5;
-        symbol [ progressY %tmp.192 210 25 34 ];
-        %tmp.193 = 4;
-        invoke %tmp.189 %tmp.190(%tmp.191, %tmp.192, %tmp.193);
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_208_11_211_4_stop:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_205_4_211_4_if_end:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_40_212_0_stop:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_incr:
-[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 201 ]
-        %tmp.196 = lgetv %i.6;
-        symbol [ i %tmp.196 201 35 36 ];
-        %tmp.197 = add %tmp.196 1;
-        lputv %i.6 %tmp.197;
-        symbol [ i %i.6 201 35 36 ];
-        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_test;
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_201_0_212_0_for_end:
-_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_125_40_215_4_stop:
+        symbol [ x %x.7 209 8 9 ];
+        %tmp.147 = lgetv %width.2;
+        symbol [ width %tmp.147 209 12 17 ];
+        %tmp.148 = 2;
+        %tmp.149 = div %tmp.147 %tmp.148;
+        %tmp.150 = lgetv %totalStations.4;
+        symbol [ totalStations %tmp.150 209 26 39 ];
+        %tmp.151 = 1;
+        %tmp.152 = sub %tmp.150 %tmp.151;
+        %tmp.153 = 10;
+        %tmp.154 = mul %tmp.152 %tmp.153;
+        %tmp.155 = sub %tmp.149 %tmp.154;
+        %tmp.156 = lgetv %i.6;
+        symbol [ i %tmp.156 209 54 55 ];
+        %tmp.157 = 20;
+        %tmp.158 = mul %tmp.156 %tmp.157;
+        %tmp.159 = add %tmp.155 %tmp.158;
+        lputv %x.7 %tmp.159;
+        symbol [ x %x.7 209 8 9 ];
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 211 4 ]
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_stmt:
+        %tmp.160 = lgetv %i.6;
+        symbol [ i %tmp.160 211 8 9 ];
+        symbol [ currentStation %tmp.162 211 13 27 ];
+        %tmp.162 = getv ? :currentStation;
+        %tmp.163 = lte %tmp.160 %tmp.162;
+        bf %tmp.163 @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_else_false;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_true:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_29_214_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 212 8 ]
+        %tmp.164 = lgetv %dc;
+        symbol [ dc %tmp.164 212 8 10 ];
+        symbol [ setColor %tmp.165 212 11 19 ];
+        %tmp.165 = getv function %tmp.164 :setColor;
+        symbol [ Graphics %tmp.166 212 20 28 ];
+        %tmp.166 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.167 212 29 40 ];
+        %tmp.167 = getv %tmp.166 :COLOR_WHITE;
+        symbol [ Graphics %tmp.168 212 42 50 ];
+        %tmp.168 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.169 212 51 62 ];
+        %tmp.169 = getv %tmp.168 :COLOR_WHITE;
+        invoke %tmp.164 %tmp.165(%tmp.167, %tmp.169);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 213 8 ]
+        %tmp.170 = lgetv %dc;
+        symbol [ dc %tmp.170 213 8 10 ];
+        symbol [ fillCircle %tmp.171 213 11 21 ];
+        %tmp.171 = getv function %tmp.170 :fillCircle;
+        %tmp.172 = lgetv %x.7;
+        symbol [ x %tmp.172 213 22 23 ];
+        %tmp.173 = lgetv %progressY.5;
+        symbol [ progressY %tmp.173 213 25 34 ];
+        %tmp.174 = 4;
+        invoke %tmp.170 %tmp.171(%tmp.172, %tmp.173, %tmp.174);
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_29_214_4_stop:
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_end;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_else_false:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_214_11_217_4_start:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 215 8 ]
+        %tmp.175 = lgetv %dc;
+        symbol [ dc %tmp.175 215 8 10 ];
+        symbol [ setColor %tmp.176 215 11 19 ];
+        %tmp.176 = getv function %tmp.175 :setColor;
+        symbol [ Graphics %tmp.177 215 20 28 ];
+        %tmp.177 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.178 215 29 40 ];
+        %tmp.178 = getv %tmp.177 :COLOR_WHITE;
+        symbol [ Graphics %tmp.179 215 42 50 ];
+        %tmp.179 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.180 215 51 68 ];
+        %tmp.180 = getv %tmp.179 :COLOR_TRANSPARENT;
+        invoke %tmp.175 %tmp.176(%tmp.178, %tmp.180);
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 216 8 ]
+        %tmp.181 = lgetv %dc;
+        symbol [ dc %tmp.181 216 8 10 ];
+        symbol [ drawCircle %tmp.182 216 11 21 ];
+        %tmp.182 = getv function %tmp.181 :drawCircle;
+        %tmp.183 = lgetv %x.7;
+        symbol [ x %tmp.183 216 22 23 ];
+        %tmp.184 = lgetv %progressY.5;
+        symbol [ progressY %tmp.184 216 25 34 ];
+        %tmp.185 = 4;
+        invoke %tmp.181 %tmp.182(%tmp.183, %tmp.184, %tmp.185);
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_214_11_217_4_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_211_4_217_4_if_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_40_218_0_stop:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_incr:
+[ "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc" 207 ]
+        %tmp.188 = lgetv %i.6;
+        symbol [ i %tmp.188 207 35 36 ];
+        %tmp.189 = add %tmp.188 1;
+        lputv %i.6 %tmp.189;
+        symbol [ i %i.6 207 35 36 ];
+        goto @_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_test;
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_207_0_218_0_for_end:
+_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxTraingView_mc_134_40_221_4_stop:
     }
 }
 [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxTraingView.mc"; @line = 1; ]

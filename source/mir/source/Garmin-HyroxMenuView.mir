@@ -76,8 +76,8 @@ class Garmin_HyroxMenuView extends WatchUi.View {
     }
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuView.mc"; @line = 31; @position = 4; @symbol_vardef = [screenHeight,31,4,16]; ]
     var screenHeight = 0;
-    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuView.mc"; @line = 33; @position = 4; @symbol_vardef = [stationEnabled,33,4,18]; ]
-    var stationEnabled;
+    [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuView.mc"; @line = 33; @position = 4; @symbol_vardef = [stationEnabled,33,4,18]; @symbol_type<0> = [Array,33,22,27]; @symbol_type<1> = [Boolean,33,28,35]; ]
+    var stationEnabled as Array<Boolean>;
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuView.mc"; @line = 52; @position = 6; @symbol_vardef = [selectedStation,52,6,21]; ]
     var selectedStation = 0;
     [ @file = "/home/noxx/Documents/Projet Garmin-Hyrox/Garmin-Hyrox/source/Garmin-HyroxMenuView.mc"; @line = 53; @symbol_functiondef = [initialize,53,13,23]; ]

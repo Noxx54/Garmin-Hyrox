@@ -16,7 +16,7 @@ class Garmin_HyroxMenuDelegate extends WatchUi.BehaviorDelegate {
     function onTap(clickEvent as ClickEvent) as Boolean {
 
     var coordinates = clickEvent.getCoordinates();
-    var station = menuView.selectedStation ;
+    var station  = menuView.selectedStation ;
     var y = coordinates[1];
     var height = menuView.screenHeight;
 

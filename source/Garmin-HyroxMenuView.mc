@@ -30,7 +30,7 @@ class Garmin_HyroxMenuView extends WatchUi.View {
 
 var screenHeight = 0;
 
-var stationEnabled = [
+var stationEnabled as Array<Boolean> = [
     true,
     true,
     true,

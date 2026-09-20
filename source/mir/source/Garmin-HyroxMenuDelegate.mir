@@ -51,9 +51,9 @@ _home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDel
         [ "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_start" "_home_noxx_Documents_Projet_Garmin_Hyrox_Garmin_Hyrox_source_Garmin_HyroxMenuDelegate_mc_16_56_40_0_stop" ]
         %station.2 = local;
         symbol [ station %station.2 19 8 15 ];
-        symbol [ menuView %tmp.5 19 18 26 ];
+        symbol [ menuView %tmp.5 19 19 27 ];
         %tmp.5 = getv ? :menuView;
-        symbol [ selectedStation %tmp.6 19 27 42 ];
+        symbol [ selectedStation %tmp.6 19 28 43 ];
         %tmp.6 = getv %tmp.5 :selectedStation;
         lputv %station.2 %tmp.6;
         symbol [ station %station.2 19 8 15 ];
