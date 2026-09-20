@@ -62,6 +62,15 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
             WatchUi.requestUpdate();
         
     }
+    //fonction qui relance le timer apres la pause
+    function onShow() as Void {
+
+    if (workouttimer != null) {
+        startWorkoutTimer();
+    }
+}
+    //Fin de fontion qui arrete le timer
+
 
 // fonction qui retourne le temps écoulé formatté à la station actuelle
     function getStationTime() as Lang.String {
@@ -125,10 +134,6 @@ function buildWorkoutStations() as Void {
     function onUpdate(dc as Dc) as Void {
 
         View.onUpdate(dc);
-
-
-        
-        System.println("Station 1 = " + enabledStations[0]);
 
 
         nomStation = workoutStations[currentStation];

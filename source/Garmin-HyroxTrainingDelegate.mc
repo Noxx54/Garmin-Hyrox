@@ -19,13 +19,15 @@ function onKey(keyEvent as KeyEvent) as Boolean {
     //Bouton du haut mets en pause le timer et le relance si il est en pause
     if (keyEvent.getKey() == WatchUi.KEY_ENTER) {
 
-    isPaused = !isPaused;
+    trainingView.workouttimer.stop();
 
-    if (isPaused) {
-        trainingView.workouttimer.stop();
-    } else {
-        trainingView.startWorkoutTimer();
-    }
+    var pauseView = new Garmin_HyroxPauseView();
+
+    WatchUi.pushView(
+        pauseView,
+        new Garmin_HyroxPauseDelegate(pauseView),
+        WatchUi.SLIDE_UP
+    );
 
     return true;
 }
