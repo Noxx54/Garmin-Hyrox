@@ -36,9 +36,11 @@ function onKey(keyEvent as KeyEvent) as Boolean {
 
     if (trainingView.currentStation < trainingView.workoutStations.size() - 1) {
     trainingView.currentStation++;
-    trainingView.stationSeconds = 0;
+    
     trainingView.lapModeField.setData(2);
+    trainingView.stationTimes.add(trainingView.stationSeconds);
     trainingView.activitySession.addLap();
+    trainingView.stationSeconds = 0;
     Attention.vibrate([
     new Attention.VibeProfile(100, 300)
 ]);
@@ -47,11 +49,15 @@ else {
     Attention.vibrate([
     new Attention.VibeProfile(100, 300)
 ]);
+    trainingView.stationTimes.add(trainingView.stationSeconds);
     trainingView.activitySession.addLap();
     trainingView.workouttimer.stop();
     trainingView.activitySession.stop();
     trainingView.activitySession.save();
     var finishView = new Garmin_HyroxFinishView();
+    finishView.totalSeconds = trainingView.totalSeconds;
+    finishView.stationTimes = trainingView.stationTimes;
+    finishView.workoutStations = trainingView.workoutStations;
 
     WatchUi.pushView(
         finishView,

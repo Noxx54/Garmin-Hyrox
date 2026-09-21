@@ -42,7 +42,10 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     var enabledStations as Array<Boolean> = [];
     var workoutStations as Array<String> = [];
     var heartRate = 0;
+    var stationTimes as Array<Number> = [];
     // fin des variables
+
+    
     // fonction qui initialise la vue et lance le timer
     function initialize() {
         View.initialize();       
