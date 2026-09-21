@@ -14,7 +14,7 @@ var stations as Array<String> = [
     "Running 3 : 1km",
     "Sled Pull",
     "Running 4 : 1km",
-    "Burpee Broad Jump",
+    "Burpees",
     "Running 5 : 1km",
     "Rowing",
     "Running 6 : 1km",
@@ -93,8 +93,8 @@ if (stationEnabled[selectedStation]) {
 
     dc.drawText(
         centerX,
-        height / 4,
-        Graphics.FONT_MEDIUM,
+        height / 5 - 15,
+        Graphics.FONT_TINY,
         symbole + " " + stations[selectedStation],
         Graphics.TEXT_JUSTIFY_CENTER
     );
@@ -107,8 +107,8 @@ if (stationEnabled[selectedStation]) {
 
     dc.drawText(
         centerX,
-        height / 2,
-        Graphics.FONT_MEDIUM,
+        height * 2 / 5 - 15,
+        Graphics.FONT_TINY,
         symbole2 + " " + stations[selectedStation + 1],
         Graphics.TEXT_JUSTIFY_CENTER
     );
@@ -121,12 +121,24 @@ if (stationEnabled[selectedStation]) {
 
     dc.drawText(
         centerX,
-        height * 3 / 4,
-        Graphics.FONT_MEDIUM,
+        height * 3 / 5 - 15,
+        Graphics.FONT_TINY,
         symbole3 + " " + stations[selectedStation + 2],
         Graphics.TEXT_JUSTIFY_CENTER
     );
 
+    var symbole4 = "0";
+    if (stationEnabled[selectedStation + 3]) {
+        symbole4 = "1";
+    }
+
+    dc.drawText(
+        centerX,
+        height * 4 / 5 - 15,
+        Graphics.FONT_TINY,
+        symbole4 + " " + stations[selectedStation + 3],
+        Graphics.TEXT_JUSTIFY_CENTER
+    );
         
     }
 

@@ -20,12 +20,15 @@ class Garmin_HyroxMenuDelegate extends WatchUi.BehaviorDelegate {
     var y = coordinates[1];
     var height = menuView.screenHeight;
 
-    if (y < height / 3) {
+    if (y < height / 5 + 15) {
     station = menuView.selectedStation;
-} else if (y < height * 2 / 3) {
+} else if (y < height * 2 / 5 + 15) {
     station = menuView.selectedStation + 1;
-} else {
+} else if (y < height * 3 / 5 + 15){
     station = menuView.selectedStation + 2;
+}
+    else {
+    station = menuView.selectedStation + 3;
 }
 
     if (menuView.stationEnabled[station]) {
@@ -41,7 +44,7 @@ class Garmin_HyroxMenuDelegate extends WatchUi.BehaviorDelegate {
 
     function onNextPage() as Boolean {
 
-    if (menuView.selectedStation < 13) {
+    if (menuView.selectedStation < 12) {
         menuView.selectedStation++;
     }
 

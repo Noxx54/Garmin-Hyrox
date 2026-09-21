@@ -16,6 +16,7 @@ function initialize(view) {
 }
 
 function onKey(keyEvent as KeyEvent) as Boolean {
+    
     //Bouton du haut mets en pause le timer et le relance si il est en pause
     if (keyEvent.getKey() == WatchUi.KEY_ENTER) {
 

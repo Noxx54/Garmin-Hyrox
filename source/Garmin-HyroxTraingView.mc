@@ -37,9 +37,13 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     "Running",
     "Wall Balls"
 ];
+
+
     var enabledStations as Array<Boolean> = [];
     var workoutStations as Array<String> = [];
     var heartRate = 0;
+    // fin des variables
+    // fonction qui initialise la vue et lance le timer
     function initialize() {
         View.initialize();       
         startWorkoutTimer();
@@ -69,10 +73,10 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
         startWorkoutTimer();
     }
 }
-    //Fin de fontion qui arrete le timer
+    //Fin de fontion qui relance le timer
 
 
-// fonction qui retourne le temps écoulé formatté à la station actuelle
+// fonction qui retourne le temps écoulé formatté de la station actuelle
     function getStationTime() as Lang.String {
 
     var minutes = stationSeconds / 60;
@@ -84,6 +88,7 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
 
     return minutes + ":" + seconds;
 }
+
 // fonction qui retourne le temps total écoulé formatté
   function getTotalTime() as Lang.String {
 
@@ -97,13 +102,14 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     return minutes + ":" + seconds;
 }
 
-    //fonction de creation d'activité
+    //fonction de creation d'activité et lancement de celle-ci
     function startActivity() as Void {
         activitySession = ActivityRecording.createSession({
         :name => "HYROX",
         :sport => Activity.SPORT_GENERIC
         
     });
+
     //ajout du type de sport a l'activité exportée sur Garmin Connect
     lapModeField = activitySession.createField(
     "MODE",
@@ -117,10 +123,13 @@ class Garmin_HyroxTrainingView extends WatchUi.View {
     }
 );
     //Fin de l'ajout du type de sport a l'activité exportée sur Garmin Connect
+
+    //Demarrage de l'activité
     activitySession.start();
     }
+    //find e la fonction de creatione t lancement d'activité
 
-
+//Fonction qui séléctione les activité
 function buildWorkoutStations() as Void {
 
     workoutStations = [];
@@ -131,6 +140,8 @@ function buildWorkoutStations() as Void {
         }
     }
 }
+//Fin de la fonction de selection
+
     function onUpdate(dc as Dc) as Void {
 
         View.onUpdate(dc);
@@ -162,47 +173,40 @@ function buildWorkoutStations() as Void {
             Graphics.COLOR_WHITE,
             Graphics.COLOR_TRANSPARENT
         );
-
         dc.drawText(
             width / 2,
-            height / 2,
-            Graphics.FONT_MEDIUM,
-            "TRAINING",
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-        dc.drawText(
-            width / 2,
-            height / 3,
-            Graphics.FONT_MEDIUM,
-            "Station: " + (currentStation + 1) +" / " + workoutStations.size() + " " + nomStation,              
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-
-        dc.drawText(
-            width / 2,
-            height / 4,
-            Graphics.FONT_MEDIUM,
-            "total : "+ getTotalTime(),
+            height / 5 - 15,
+            Graphics.FONT_TINY,
+            "Temps total : "+ getTotalTime(),
               Graphics.TEXT_JUSTIFY_CENTER
         );
         dc.drawText(
             width / 2,
-            height / 1.5,
-            Graphics.FONT_MEDIUM,
-            "total : "+ getStationTime(),
+            height * 2 / 5 - 15,
+            Graphics.FONT_TINY,
+            "Station: " + (currentStation + 1) +" / " + workoutStations.size() + " " + nomStation,              
+            Graphics.TEXT_JUSTIFY_CENTER
+        );
+
+        
+        dc.drawText(
+            width / 2,
+            height * 3 / 5 - 15,
+            Graphics.FONT_TINY,
+            "Temps Station : "+ getStationTime(),
               Graphics.TEXT_JUSTIFY_CENTER
         );
         //Affichage de la fréquence cardiaque
         dc.drawText( 
              width / 2,
-            height * 5 / 6,
-            Graphics.FONT_MEDIUM,
+            height * 4 / 5 - 15,
+            Graphics.FONT_TINY,
             "HR : " + heartRate + " BPM",
             Graphics.TEXT_JUSTIFY_CENTER
 );
         //Affichage de la barre de progression 
         var totalStations = workoutStations.size();
-var progressY = height - 25;
+        var progressY = height - 35;
 
 for (var i = 0; i < totalStations; i++) {
 
@@ -213,7 +217,7 @@ for (var i = 0; i < totalStations; i++) {
         dc.fillCircle(x, progressY, 4);
     } else {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-        dc.drawCircle(x, progressY, 4);
+        dc.drawCircle(x, progressY, 2);
     }
 }
         //Fin affichage barre

@@ -9,7 +9,26 @@ class Garmin_HyroxFinishDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function onKey(keyEvent as KeyEvent) as Boolean {
-        System.exit();
-        
+
+        if (keyEvent.getKey() == WatchUi.KEY_ENTER) {
+
+            var recapView = new Garmin_HyroxRecapView();
+
+            WatchUi.pushView(
+                recapView,
+                new Garmin_HyroxRecapDelegate(recapView),
+                WatchUi.SLIDE_UP
+            );
+
+            return true;
+        }
+
+        if (keyEvent.getKey() == WatchUi.KEY_ESC) {
+
+            System.exit();
+
+        }
+
+        return false;
     }
 }
